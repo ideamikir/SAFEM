@@ -10,7 +10,6 @@
 //_______________//
 /*
     TOKENOMICS(Basically and summary. Contact us for more info)
-
     Fair launch
     The LP will be locked and timestamp will be shared.
     Total Supply 7.200.000, It will be divided into two.
@@ -418,7 +417,7 @@ contract SAFEM is Context, IERC20, Ownable {
     address[] private _excluded;
     address private _developmentWalletAddress = 0x75a29CD448e1DE2813ff729DD4D71363C6E06C1f;
     uint256 private constant MAX = ~uint256(0);
-    uint256 private _tTotal = 7.200000000000000000000000;
+    uint256 private _tTotal = 7200000 * 10**18;
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
     string private _name = "Safem";
@@ -426,17 +425,17 @@ contract SAFEM is Context, IERC20, Ownable {
     uint8 private _decimals = 18;
     uint256 public _taxFee = 0;
     uint256 private _previousTaxFee = _taxFee;
-    uint256 public _developmentFee = 40;
+    uint256 public _developmentFee = 100;
     uint256 private _previousDevelopmentFee = _developmentFee;
-    uint256 public _liquidityFee = 10;
+    uint256 public _liquidityFee = 0;
     uint256 private _previousLiquidityFee = _liquidityFee;
 
     IUniswapV2Router02 public immutable uniswapV2Router;
     address public immutable uniswapV2Pair;
     bool inSwapAndLiquify;
     bool public swapAndLiquifyEnabled = true;
-    uint256 public _maxTxAmount = 7200000000000000000000000;
-    uint256 private numTokensSellToAddToLiquidity = 720000000000000000000000;
+    uint256 public _maxTxAmount = 7200000 * 10**18;
+    uint256 private numTokensSellToAddToLiquidity = 72000 * 10**18;
     event MinTokensBeforeSwapUpdated(uint256 minTokensBeforeSwap);
     event SwapAndLiquifyEnabledUpdated(bool enabled);
     event SwapAndLiquify(
@@ -671,22 +670,6 @@ contract SAFEM is Context, IERC20, Ownable {
         _liquidityFee = _previousLiquidityFee;
     }
 
-    function removeAllFee() private {
-        if(_developmentFee > 51 && _liquidityFee > 51) return;
-        _previousTaxFee = _taxFee;
-        _previousDevelopmentFee = _developmentFee;
-        _previousLiquidityFee = _liquidityFee;
-        _taxFee = 0;
-        _developmentFee = 0;
-        _liquidityFee = 0;
-    }
-
-    function restoreAllFee() private {
-        _taxFee = _previousTaxFee;
-        _developmentFee = _previousDevelopmentFee;
-        _liquidityFee = _previousLiquidityFee;
-    }
-
     function isExcludedFromFee(address account) public view returns(bool) {
         return _isExcludedFromFee[account];
     }
@@ -815,7 +798,5 @@ contract SAFEM is Context, IERC20, Ownable {
 */
 
 /*
-
     Thank you, if you read all the way down. If not, still thank you!
-
 */
