@@ -1,11 +1,11 @@
 /* 
-%𝟏𝟎.𝟎 𝐓𝐚𝐱 (𝐈𝐭 𝐜𝐚𝐧 𝐛𝐞 𝐥𝐞𝐬𝐬 𝐛𝐮𝐭 𝐈𝐭 𝐜𝐚𝐧𝐧𝐨𝐭 𝐛𝐞 𝐦𝐨𝐫𝐞 𝐭𝐡𝐚𝐧 %𝟏𝟎.𝟎)
-𝐈𝐭 𝐜𝐚𝐧𝐧𝐨𝐭 𝐛𝐞 𝐦𝐨𝐫𝐞 𝐭𝐡𝐚𝐧 %𝟏𝟎.𝟎 , 𝐜𝐡𝐞𝐜𝐤 "𝐂𝐨𝐧𝐭𝐫𝐚𝐜𝐭 𝐒𝐨𝐮𝐫𝐜𝐞 𝐂𝐨𝐝𝐞".
+    %𝟏𝟎.𝟎 𝐓𝐚𝐱 (𝐈𝐭 𝐜𝐚𝐧 𝐛𝐞 𝐥𝐞𝐬𝐬 𝐛𝐮𝐭 𝐈𝐭 𝐜𝐚𝐧𝐧𝐨𝐭 𝐛𝐞 𝐦𝐨𝐫𝐞 𝐭𝐡𝐚𝐧 %𝟏𝟎.𝟎)
+    𝐈𝐭 𝐜𝐚𝐧𝐧𝐨𝐭 𝐛𝐞 𝐦𝐨𝐫𝐞 𝐭𝐡𝐚𝐧 %𝟏𝟎.𝟎 , 𝐜𝐡𝐞𝐜𝐤 "𝐂𝐨𝐧𝐭𝐫𝐚𝐜𝐭 𝐒𝐨𝐮𝐫𝐜𝐞 𝐂𝐨𝐝𝐞".
 */
 //_______________//
 /*  
-𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 Telegram : https://t.me/SafemCommunity  
-Announcements Telegram: https://t.me/SafemAnnouncements*
+    𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 Telegram :    https://t.me/SafemCommunity  
+        Announcements Telegram: https://t.me/SafemAnnouncements*
 */
 //_______________//
 /*
@@ -191,7 +191,7 @@ abstract contract Ownable is Context {
     address private _owner;
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
     constructor () {
-        _owner = 0x680A1ce25F644514Caf12Fa73a8288C92863A621;
+        _owner = 0x9978EFA02920189D5b19e0Eae32A291A55621C37;
         emit OwnershipTransferred(address(0), _owner);
     }
     function owner() public view virtual returns (address) {
@@ -416,7 +416,7 @@ contract SAFEM is Context, IERC20, Ownable {
     mapping (address => bool) private _isExcludedFromFee;
     mapping (address => bool) private _isExcluded;
     address[] private _excluded;
-    address private _developmentWalletAddress = 0x6850cfe9d387f4f6A8A6C6158d1F9C9C43ca5a49;
+    address private _developmentWalletAddress = 0x75a29CD448e1DE2813ff729DD4D71363C6E06C1f;
     uint256 private constant MAX = ~uint256(0);
     uint256 private _tTotal = 7.200000000000000000000000;
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
@@ -426,9 +426,9 @@ contract SAFEM is Context, IERC20, Ownable {
     uint8 private _decimals = 18;
     uint256 public _taxFee = 0;
     uint256 private _previousTaxFee = _taxFee;
-    uint256 public _developmentFee = 100;
+    uint256 public _developmentFee = 40;
     uint256 private _previousDevelopmentFee = _developmentFee;
-    uint256 public _liquidityFee = 0;
+    uint256 public _liquidityFee = 10;
     uint256 private _previousLiquidityFee = _liquidityFee;
 
     IUniswapV2Router02 public immutable uniswapV2Router;
